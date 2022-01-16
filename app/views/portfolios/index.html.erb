@@ -14,4 +14,6 @@
   </p>
   <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %> 
   <%= link_to "Edit", edit_portfolio_path(portfolio_item) %>
+  <%#= link_to "Remove", portfolio_path(portfolio_item), method: :delete %>
+  <%= button_to "Remove", portfolio_item, method: :delete %>
 <% end %>
