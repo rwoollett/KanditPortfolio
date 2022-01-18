@@ -37,7 +37,7 @@ end
 
 1.times do |folio|
   Portfolio.create!(
-    title: "Portfolio #{folio + 1}",
+    title: "Portfolio #{folio}",
     subtitle: "Angular",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
     main_image: "http://placehold.it/600x400",
@@ -49,8 +49,7 @@ puts "9 portfolio items created"
 
 3.times do |technology|
   Portfolio.last.technologies.create!(
-    name: "Technology #{technology + 1}",
-    portfolio_id: Portfolio.last.id
+    name: "Technology #{technology + 1}"
   )
 end
 
