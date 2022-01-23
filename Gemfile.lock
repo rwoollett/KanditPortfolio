@@ -144,6 +144,8 @@ GEM
     nokogiri (1.13.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    petergate (3.0.0)
+      activerecord (> 4.0.0)
     pg (1.2.3)
     popper_js (2.9.3)
     pry (0.14.1)
@@ -239,6 +241,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kandit_view_tool!
+  petergate (~> 3.0)
   pg (~> 1.1)
   pry-rails (~> 0.3.9)
   puma (~> 5.0)
