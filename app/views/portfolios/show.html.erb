@@ -17,7 +17,7 @@
 <p style="color: green"><%= notice %></p>
 
 <div>
-  <%= link_to "Edit", edit_portfolio_path(@portfolio_item) %> |
+  <%= link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)  %> |
   <%= link_to "Back", portfolios_path %>
   <%#= button_to "Remove", @portfolio_item, method: :delete %>
 </div>

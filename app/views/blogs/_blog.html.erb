@@ -15,7 +15,11 @@
 
   <p>
     <strong>Status:</strong>
-    <%= link_to blog.status, toggle_status_blog_path(blog) %>
+    <% if logged_in?(:site_admin) %>
+      <%= link_to blog.status, toggle_status_blog_path(blog)  %>
+    <% else %>
+      <%= blog.status %>
+    <% end %>
   </p>
 
 </div>
