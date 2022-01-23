@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/rwoollett/kandit_view_tool
+  revision: 97b1a5a5e60c05bc5ffb14e12140c82dba0e8d87
+  specs:
+    kandit_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -232,6 +238,7 @@ DEPENDENCIES
   friendly_id (~> 5.4, >= 5.4.2)
   importmap-rails
   jbuilder
+  kandit_view_tool!
   pg (~> 1.1)
   pry-rails (~> 0.3.9)
   puma (~> 5.0)
