@@ -65,8 +65,21 @@ body {
   border-bottom-color: #fff;
 }
 
-ul.no-bullets {
+
+/*
+ * Custom Styles
+ */
+ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
+}
+
+.card-body {
+  color: black;
+  text-align: left;
+}
+
+.auth-links a {
+  color: black;
 }
