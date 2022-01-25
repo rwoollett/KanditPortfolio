@@ -1,11 +1,11 @@
 <div class="col-md-8">
 
-  <p style="color: green"><%= notice %></p>
+  <h2><%= @blog.title %></h2>
 
-  <%= render @blog %>
+  <%= link_to "Edit", edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
-  <div>
-    <%= link_to "Back to blogs", blogs_path %>
-  </div>
-
+  <p>
+    <%= @blog.body %>
+  </p>
+ 
 </div>
