@@ -8,5 +8,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 
 pin "popper", to: 'popper.js', preload: true
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
-pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.0/dist/jquery.js"
 pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.1/lib/assets/compiled/rails-ujs.js"

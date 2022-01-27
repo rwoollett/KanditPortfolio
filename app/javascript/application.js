@@ -3,7 +3,6 @@ import "@hotwired/turbo-rails";
 import "controllers";
 import "bootstrap";
 
-import "jquery";
 import Rails from '@rails/ujs';
 
 Rails.start();
