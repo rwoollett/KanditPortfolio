@@ -7,7 +7,7 @@ module ApplicationHelper
    else 
      link_to "Logout", destroy_user_session_path, 
           class: style,
-          :method => :delete,
+          :"data-turbo-method" => :delete,
           :"data-confirm" => "Are you sure?"       
    end 
   end
