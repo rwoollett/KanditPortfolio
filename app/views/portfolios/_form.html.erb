@@ -1,42 +1,59 @@
 
 <%= form_for(@portfolio_item) do |form| %>
-  <% if @portfolio_item.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-      <ul>
-        <% @portfolio_item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <% if @portfolio_item.errors.any? %>
+    <div class="row" style="color: red">
+      <div class="col-auto">
+        <h2><%= pluralize(@portfolio_item.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+        <ul>
+          <% @portfolio_item.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :subtitle, class: "form-label" %>
+        <%= form.text_field :subtitle, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :body, class: "form-label" %>
+        <%= form.text_area :body, class: "form-control", rows: 12 %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr/>
+      <h2>Technologies</h2>
+      <div>
+        <%= form.fields_for :technologies do |technology_form| %>
+        <div class="mb-3">
+        <%= technology_form.label :name, class: "form-label" %>
+        <%= technology_form.text_field :name, class: "form-control" %>
+        </div>
+        <% end %>
+      </div>
+      <div>
+      </div>
+      <div class="d-grid gap-2 mb-3">
+        <%= form.submit "Save Portfolio Item", class: "btn btn-primary"  %>
+      </div>
+
+    </div>
   </div>
 
-  <div>
-    <%= form.label :subtitle, style: "display: block" %>
-    <%= form.text_field :subtitle %>
-  </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
-
-  <ul>
-    <%= form.fields_for :technologies do |technology_form| %>
-    <li>
-    <%= technology_form.label :name %>
-    <%= technology_form.text_field :name %>
-    </li>
-    <% end %>
-  </ul>
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
 
