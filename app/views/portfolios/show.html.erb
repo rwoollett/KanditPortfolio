@@ -1,28 +1,24 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-7">
-      <%= image_tag @portfolio_item.main_image %>
+  <div class="row g-0">
+    <div class="col-md-8">
+      <%= image_tag @portfolio_item.main_image, width: "420px" %>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-4">
       <h1><%= @portfolio_item.title %></h1>
       <hr/>
 
       <em><%= @portfolio_item.subtitle %></em>
       <p><%= @portfolio_item.body %>
-      <hr/>
 
       <% if @portfolio_item.technologies.count > 0 %>
+        <hr/>
         <h3>Technologies Used:</h3> 
         <% @portfolio_item.technologies.each do |t| %>
           <p> <%= t.name %></p>
         <% end %>
       <% end %>
 
-      <div>
-        <%#= link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)  %> |
-        <%#= button_to "Remove", @portfolio_item, method: :delete %>
-      </div>
     </div>
   </div>
 </div>
