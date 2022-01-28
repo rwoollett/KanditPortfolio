@@ -9,6 +9,12 @@ import "controllers";
 
 Rails.start();
 
-$( function() {
-  $( "#datepicker" ).datepicker();
-} );
+// var ready = undefined;
+
+// ready = function() {
+//   $('.sortable').sortable();
+// };
+
+// $( function() {
+//   ready();
+// } );
