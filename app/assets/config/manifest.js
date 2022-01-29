@@ -5,4 +5,5 @@
 //= link jquery3.js
 //= link jquery-ui.js
 //= link jquery-ui.css
-
+//= link HardDrivePhotojpeg.mp4
+//= link HardDrivePhotojpeg.ogv
