@@ -1,8 +1,8 @@
 
 <% if flash[:alert] %>
-  <%= js add_gritter(flash[:alert], title: "Rodney Woollett Portfolio", time: 500) %>
+  <%= js add_gritter(flash[:alert], title: "Rodney Woollett Portfolio", time: 1000) %>
 <% elsif flash[:error] %>
-  <%= js add_gritter(flash[:error], title: "Rodney Woollett Portfolio", time: 500) %>
+  <%= js add_gritter(flash[:error], title: "Rodney Woollett Portfolio", time: 1800) %>
 <% else %>
-  <%= js add_gritter(flash[:notice], title: "Rodney Woollett Portfolio", time: 500) %>
+  <%= js add_gritter(flash[:notice], title: "Rodney Woollett Portfolio", time: 400) %>
 <% end %>

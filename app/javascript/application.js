@@ -7,7 +7,6 @@ import "./html_sortable";
 import "cocoon";
 import "@hotwired/turbo-rails";
 import "controllers";
-
 import "./gritterlocal";
 
 Rails.start();
