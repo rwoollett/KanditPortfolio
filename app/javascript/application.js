@@ -5,18 +5,5 @@ import "bootstrap";
 import "jquery-ui";
 import "./html_sortable";
 import "cocoon";
-
 import "@hotwired/turbo-rails";
 import "controllers";
-
-// ddRails.start();
-
-// var ready = undefined;
-
-// ready = function() {
-//   $('.sortable').sortable();
-// };
-
-// $( function() {
-//   ready();
-// } );
