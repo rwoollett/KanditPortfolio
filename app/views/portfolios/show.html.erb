@@ -19,6 +19,12 @@
         <% end %>
       <% end %>
 
+      <% if logged_in?(:site_admin) %>
+      <div class="d-grid gap-2 mb-3">
+        <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: "btn btn-warning" %>
+      </div>
+      <% end %>
+
     </div>
   </div>
 </div>
