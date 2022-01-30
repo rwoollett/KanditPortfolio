@@ -4,7 +4,7 @@ import "bootstrap";
 import Rails from '@rails/ujs';
 import "jquery-ui";
 import "./html_sortable";
-import "cocoon"
+import "cocoon";
 import "@hotwired/turbo-rails";
 import "controllers";
 

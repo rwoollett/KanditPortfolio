@@ -1,10 +1,20 @@
 @import "jquery-ui";
 @import "bootstrap";
 
-
 /* Custom styles */
 
 .portfolio-container {
   padding-top: 30px;
+}
+
+.button_to {
+  background: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+
+  button {
+    background: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+    border: none;
+    text-decoration: underline;
+    padding: 0px;
+  }
 }
 
