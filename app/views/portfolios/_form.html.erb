@@ -2,16 +2,9 @@
 <%= form_for(@portfolio_item) do |form| %>
 
   <% if @portfolio_item.errors.any? %>
-    <div class="row" style="color: red">
-      <div class="col-auto">
-        <h2><%= pluralize(@portfolio_item.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
-        <ul>
-          <% @portfolio_item.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+    <% @portfolio_item.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Rodney Woollett Portfolio", time: 1800, stick: false) %>
+    <% end %>
   <% end %>
 
   <div class="row">
