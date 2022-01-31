@@ -5,17 +5,19 @@ module ApplicationHelper
     " ".html_safe +
     (link_to "Login", new_user_session_path, class: style)
    else 
-     link_to "Logout", destroy_user_session_path, 
-          class: style,
-          :"data-turbo" => false,
-          :method => :delete
+    #  link_to "Logout", destroy_user_session_path, 
+    #       class: style,
+    #       :"data-turbo" => false,
+    #       :method => :delete
           #:"data-turbo-method" => :delete
           # ,
           # :"data-confirm" => "Are you sure?"    
-    #  button_to 'Logout', destroy_user_session_path,
-    #         class: style,
-    #         method: :delete             
-   end 
+     button_to 'Logout', destroy_user_session_path,
+            class: style,
+            method: :delete
+            #"data-turbo" => false,
+            #:"data-turbo-method" => :delete
+        end 
   end
 
   def source_helper(layout_name)
@@ -50,4 +52,16 @@ module ApplicationHelper
   def active? path 
     "active" if current_page? path
   end
+
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+    if alert
+      alert_generator alert
+    end
+  end
+
+  def alert_generator msg
+    js add_gritter(msg, title: "Rodney Woollett Portfolio", sticky: false, time: 1000)
+  end
+
 end
