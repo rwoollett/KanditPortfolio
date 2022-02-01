@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   devise_scope :user do
     # Redirects delete account users back homepage
     get "users", to: "pages#home"
@@ -22,5 +21,7 @@ Rails.application.routes.draw do
     end
   end
   
+  mount ActionCable.server => '/cable'
+
   root to: 'pages#home'
 end
