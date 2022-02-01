@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_scope :user do
     # Redirects delete account users back homepage
     get "users", to: "pages#home"

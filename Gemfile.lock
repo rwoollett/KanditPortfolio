@@ -269,6 +269,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis (3.3.5)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -358,6 +359,7 @@ DEPENDENCIES
   pry-rails (~> 0.3.9)
   puma (~> 5.0)
   rails (~> 7.0.1)
+  redis (~> 3.3, >= 3.3.5)
   sassc-rails
   sprockets-rails
   stimulus-rails
