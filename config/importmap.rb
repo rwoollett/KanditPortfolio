@@ -13,3 +13,5 @@ pin "cocoon", to: 'cocoon.js'
 pin "popper", to: 'popper.js'
 pin "bootstrap", to: 'bootstrap.min.js'
 
+pin "@rails/actioncable", to: "actioncable.esm.js"
+pin_all_from "app/javascript/channels", under: "channels"
