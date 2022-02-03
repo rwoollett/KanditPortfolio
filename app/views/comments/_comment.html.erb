@@ -1,12 +1,18 @@
 <div class="comment-card">
-  <div class="card shadow-sm">
+  <div class="card mt-3 shadow-sm">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-2">
+          <%= gravatar_helper comment.user %>
         </div>
         
-        <div class="col-md-11">
-          <%= comment.content %>
+        <div class="col-10">
+          <div>
+            <%= comment.content %>
+          </div>
+          <div class="comment-post-meta">
+            Comment posted by <span class="comment-name"><%= comment.user.first_name %></span> <%= distance_of_time_in_words comment.created_at, Time.now %> ago</p>
+          </div>
         </div>
       </div>
     </div>
