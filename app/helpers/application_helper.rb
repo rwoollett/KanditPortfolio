@@ -5,18 +5,9 @@ module ApplicationHelper
     " ".html_safe +
     (link_to "Login", new_user_session_path, class: style)
    else 
-    #  link_to "Logout", destroy_user_session_path, 
-    #       class: style,
-    #       :"data-turbo" => false,
-    #       :method => :delete
-          #:"data-turbo-method" => :delete
-          # ,
-          # :"data-confirm" => "Are you sure?"    
      button_to 'Logout', destroy_user_session_path,
             class: style,
             method: :delete
-            #"data-turbo" => false,
-            #:"data-turbo-method" => :delete
         end 
   end
 
