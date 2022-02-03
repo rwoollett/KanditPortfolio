@@ -8,6 +8,6 @@ import "cocoon";
 import "@hotwired/turbo-rails";
 import "controllers";
 import "./gritterlocal";
+import "channels"
 
 Rails.start();
-
