@@ -7,7 +7,8 @@ module ApplicationHelper
    else 
      button_to 'Logout', destroy_user_session_path,
             class: style,
-            method: :delete
+            method: :delete,
+            "data-turbo" => false
         end 
   end
 
