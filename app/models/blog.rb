@@ -16,4 +16,6 @@ class Blog < ApplicationRecord
   def self.featured_blogs 
     limit 2
   end
+
+  scope :recent, -> { order("updated_at DESC") }
 end
