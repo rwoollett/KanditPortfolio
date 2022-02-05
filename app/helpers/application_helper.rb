@@ -56,4 +56,8 @@ module ApplicationHelper
     js add_gritter(msg, title: "Rodney Woollett Portfolio", sticky: false, time: 1000)
   end
 
+  def include_jquery 
+    javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  end
+
 end

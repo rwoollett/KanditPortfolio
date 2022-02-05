@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <%= include_jquery %>
 
     <meta name="keywords" content="<%= @seo_keywords %>"/>
     <%= stylesheet_link_tag "blogs", "data-turbo-track": "reload" %>
