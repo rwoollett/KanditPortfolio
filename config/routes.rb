@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :topics, only: [:index, :show]
+  resources :topics, only: [:show]
   
   devise_scope :user do
     # Redirects delete account users back homepage

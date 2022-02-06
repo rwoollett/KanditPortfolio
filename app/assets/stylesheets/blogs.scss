@@ -152,5 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .topic-link {
   margin-bottom: .25rem;
-  font-size: 1.125rem;
+}
+.nav .active {
+  color: rgb(175, 46, 46);
+  border-bottom-color: #fff;
 }

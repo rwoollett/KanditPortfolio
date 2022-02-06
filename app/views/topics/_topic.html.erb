@@ -1,4 +1,2 @@
+<%= link_to topic.title, topic, class: "topic-link p-2 link-secondary #{"active" if current_page? '/topics/'+topic.id.to_s}" %>
 
-<article class="topic-item" id="<%= dom_id topic %>">
-  <p class="topic-link"><%= link_to topic.title, topic %></p>
-</article>

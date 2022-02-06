@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ toggle_status show edit update destroy ]
+  before_action :set_topics, only: %i[ index show new edit create update destroy ]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
@@ -11,6 +12,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.published.recent.page(params[:page]).per(5)
     end
     @page_title = "My Portfolio Blog"
+
   end
 
   # GET /blogs/1 or /blogs/1.json
@@ -28,6 +30,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @blog.topic_id = Topic.first.id
   end
 
   # GET /blogs/1/edit
@@ -38,7 +41,6 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     # Give a default topic 
-    @blog.topic_id = Topic.first.id
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: "Blog was created." }
@@ -79,6 +81,12 @@ class BlogsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_topics
+      @topics = Topic.all
+      @featured = Blog.all.limit(2)
+      @feature = Blog.first
+    end
+
     def set_blog
       # @blog = Blog.find(params[:id])
       @blog = Blog.friendly.find(params[:id])
