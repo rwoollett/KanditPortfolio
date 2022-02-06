@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   height: 2.75rem;
-  overflow-y: hidden;
+  // overflow-y: hidden;
 }
 
 .nav-scroller .nav {
@@ -52,9 +52,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-scroller .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-bottom: 2px;
   font-size: .875rem;
+  color: rgba(31, 28, 28, 0.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+.nav-scroller .nav-link + .nav-link {
+  margin-left: 1rem;
 }
 
 .card-img-right {
@@ -145,15 +150,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
- * Topics index
+ * Topics navigation
  */
-.topic-item {
-  margin-bottom: 1rem;
-}
-.topic-link {
-  margin-bottom: .25rem;
-}
 .nav .active {
-  color: rgb(175, 46, 46);
-  border-bottom-color: #fff;
+  font-weight: bold;
+  border-bottom-color: rgb(129, 161, 167);
 }
+.nav-scroller .nav-link:hover,
+.nav-scroller .nav-link:focus {
+  border-bottom-color: rgba(129, 161, 167, .25);
+}
+
