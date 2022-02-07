@@ -61,4 +61,8 @@ module ApplicationHelper
     javascript_include_tag "/assets/jquery3.min.js"
   end
 
+  def image_generator height:, width:
+    "http://placehold.it/#{height}x#{width}"
+  end
+
 end
