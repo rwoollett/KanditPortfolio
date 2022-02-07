@@ -3,9 +3,9 @@
     <h1 class="display-4 fst-italic"><%= @feature.title %></h1>
     <p class="lead my-3"><%= @feature.body[0..45] %></p>
     <p class="lead mb-0"><%= link_to "Continue reading...", @feature, class: "text-white fw-bold" %>
-    <span>
+    <p class="lead mb-0">
       <%= link_to "Write a New Blog", new_blog_path if logged_in?(:site_admin)  %> 
-    </span>
+    </p>
   </div>
 </div>
 <div class="row mb-2">
