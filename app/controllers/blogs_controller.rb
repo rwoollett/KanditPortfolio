@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
+  include NavTopic
   before_action :set_blog, only: %i[ toggle_status show edit update destroy ]
-  before_action :set_topics, only: %i[ index show new edit create update destroy ]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
@@ -80,17 +80,9 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_topics
-      @topics = Topic.all
-      @featured = Blog.all.limit(2)
-      @feature = Blog.first
-    end
 
     def set_blog
-      # @blog = Blog.find(params[:id])
       @blog = Blog.friendly.find(params[:id])
-
     end
 
     # Only allow a list of trusted parameters through.
