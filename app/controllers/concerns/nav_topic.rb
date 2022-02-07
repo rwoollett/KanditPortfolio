@@ -7,8 +7,12 @@ module NavTopic
   
   def set_nav_topics
     @featured = Blog.published.limit(2)
-    @feature = Blog.published.first
-    @nav_topics = Topic.with_blogs.order("topics.title")
+    @feature = Blog.published.last
+    if logged_in?(:site_admin)
+      @nav_topics = Topic.with_blogs.order("topics.title")
+    else
+      @nav_topics = Topic.with_published_blogs.order("topics.title")
+    end
   end
 
 end
