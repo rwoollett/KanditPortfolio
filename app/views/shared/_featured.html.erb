@@ -5,7 +5,7 @@
       <strong class="d-inline-block mb-2 text-primary"><%= f.topic.title %></strong>
       <h3 class="mb-0"><%= f.title %></h3>
       <div class="mb-1 text-muted"><%= f.created_at.strftime("%b %y") %></div>
-      <p class="card-text mb-auto"><%= f.body[0..70] %></p>
+      <p class="card-text mb-auto"><%= markdown f.body[0..30] %></p>
       <%= link_to "Continue reading", f, class: "stretched-link" %>
     </div>
     <div class="col-auto d-none d-lg-block">
