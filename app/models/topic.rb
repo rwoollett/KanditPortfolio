@@ -10,5 +10,4 @@ class Topic < ApplicationRecord
   def self.with_published_blogs
     with_blogs.where(blogs: { status: 1})
   end
-  #.or(includes(:blogs).where(blogs: { status: 1}))
 end
