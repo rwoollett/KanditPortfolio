@@ -1,3 +1,4 @@
+@import "jquery-ui";
 @import "bootstrap";
 @import "font-awesome";
 @import "gritter";
@@ -144,8 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   button {
     background:  #f9f9f9;
     border: none;
-    text-decoration: underline;
-    padding: 0px;
+    text-decoration: none;
   }
 }
 

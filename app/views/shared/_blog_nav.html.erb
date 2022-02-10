@@ -1,14 +1,19 @@
 <div class="container">
 
-  <header class="blog-header p-2">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <%= nav_helper 'link-secondary', 'div', 'col-auto' %>
-      <div class="col">
-        <%= login_helper("link-secondary") %>
+  <nav class="navbar navbar-expand-lg mb-3 navbar-light bg-light">
+    <div class="container-fluid">
+      <%= link_to "Rodney Woollett", root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav mr-auto">
+          <%= nav_helper 'nav-link', 'span' %>
+          <%= login_helper("nav-link") %>
+        </div>
       </div>
     </div>
-  </header>
-
+  </nav>
   <div class="nav-scroller py-1 mb-1" >
     <nav class="nav d-flex justify-content-between">
       <%= render @nav_topics %>
@@ -16,5 +21,3 @@
   </div>
 
 </div>
-
-<!-- btn btn-sm btn-outline-secondary -->
