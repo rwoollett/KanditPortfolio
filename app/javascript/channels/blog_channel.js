@@ -3,7 +3,6 @@ import consumer from "channels/consumer"
 jQuery(document).on('turbo:load', function() {
   var comments;
   comments = $('#comments');
-  console.log('Here it is');
 
   var global_chat = undefined;
   if (comments.length > 0) {
@@ -12,10 +11,8 @@ jQuery(document).on('turbo:load', function() {
       blog_id: comments.data('blog-id')
     }, {
       connected() {
-        console.log('connected');
       },
       disconnected() {
-        console.log('disconnected');
       },
       received(data) {
         return comments.append(data['comment']);
@@ -30,7 +27,6 @@ jQuery(document).on('turbo:load', function() {
   }
 
   return $('#new_comment').on("submit", (function(e) {
-    console.log ("Submit");
     var $this, textarea;
     $this = $(this);
     textarea = $this.find('#comment_content');
