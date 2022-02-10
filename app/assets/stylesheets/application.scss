@@ -128,3 +128,35 @@ body {
   }
 }
 
+.app-card-container {
+  color: black;
+  text-align: left;
+
+  > .card {
+    padding: 40px;
+  }
+
+  .fixed-col {
+    width: 220px;
+  }
+
+  .fixed-map {
+    width: 300px;
+  }
+
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+}
+
+.profile-image {
+  border: 1px solid grey;
+  width: 200px;
+}
+
+.profile-map {
+  width: 280px;
+  height: 280px;
+  border: 0px; 
+}
