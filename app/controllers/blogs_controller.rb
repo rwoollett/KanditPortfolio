@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  include NavTopic
   before_action :set_blog, only: %i[ toggle_status show edit update destroy ]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
@@ -11,20 +12,25 @@ class BlogsController < ApplicationController
       @blogs = Blog.published.recent.page(params[:page]).per(5)
     end
     @page_title = "My Portfolio Blog"
+
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new 
-    
-    @page_title = @blog.title
-    #@seo_keywords = @blog.body
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new 
+      
+      @page_title = @blog.title
+    else
+      redirect_to blogs_path, status: :found, notice: "You are not authorised to access this page"
+    end
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @blog.topic_id = Topic.first.id
   end
 
   # GET /blogs/1/edit
@@ -35,7 +41,6 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     # Give a default topic 
-    @blog.topic_id = Topic.first.id
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: "Blog was created." }
@@ -75,15 +80,13 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      # @blog = Blog.find(params[:id])
-      @blog = Blog.friendly.find(params[:id])
 
+    def set_blog
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :status, :topic_id)
     end
 end

@@ -2,10 +2,36 @@
 @import "bootstrap";
 @import "gritter";
 
+@font-face {
+  font-family: 'Lato';
+  src:font_url('Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src:font_url('RobotoSlab-Regular.ttf');
+}
+
 /* Custom styles */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Roboto Slab', serif;
+}
 
 .portfolio-container {
   padding-top: 30px;
+}
+
+.navbar-brand {
+  font-weight: bolder;
 }
 
 .button_to {

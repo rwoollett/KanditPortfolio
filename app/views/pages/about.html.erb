@@ -1,19 +1,80 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+  <div class="card">
+    <h1>About Me</h1>
+    <div class="row">
+      <div class="col-md-4 fixed-col">
+        <%= image_tag "profile.jpg", alt: "profile image", class: 'profile-image' %>
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="mb-12">
+              <h4><%= skill.title %></h4>
+              <div class="progress">
+                <div 
+                    class="progress-bar-striped bg-warning" 
+                    role="progressbar" 
+                    style="width: <%= skill.percent_utilized %>%;" 
+                    aria-valuenow="<%= skill.percent_utilized %>" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <p>With over 10 years’ experience as an Analyst Programmer, I have acquired extensive knowledge and expertise, please see the attached CV for the skills.</p>
+        <p>Ability to acquire and gain knowledge in computer systems for analytical investigations and have good analytical and problem solving. Provide team support and willing to ask and provide help.</p>
+        <p>
+          <button 
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#repositories"
+            aria-expanded="false"
+            aria-controler="repositories"
+          >
+          Online repositories
+          </button>
+          <button 
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#jobHistory"
+            aria-expanded="false"
+            aria-controler="jobHistory"
+          >
+          Job History
+          </button>
+        </p>
 
-<hr>
-
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag "profile.jpg", width: 250, alt: "profile image" %>
-  </div>
-  <div class="col-md-8">
-    <p>With over 10 years’ experience as an Analyst Programmer, I have acquired extensive knowledge and expertise, please see the attached CV for the skills.</p>
-    <p>Ability to acquire and gain knowledge in computer systems for analytical investigations and have good analytical and problem solving. Provide team support and willing to ask and provide help.</p>
-    <p>I do have online repositories profiles at:</p>
-    <ul class="no-bullets">
-      <li>https://gitlab.com/rwlltt</li>
-      <li>https://bitbucket.org/rwlt</li>
-      <li>https://github.com/rwoollett</li>
-    </ul>
+        <p>
+          <div class="collapse" id="repositories">
+            <div class="card card-body mb-1">
+              https://gitlab.com/rwlltt
+            </div>
+            <div class="card card-body mb-1">
+              https://bitbucket.org/rwlt
+            </div>
+            <div class="card card-body mb-1">
+              https://github.com/rwoollett
+            </div>
+          </div>
+        </p>
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-body mb-1">
+              Job 1
+            </div>
+            <div class="card card-body mb-1">
+              Job 2
+            </div>
+            <div class="card card-body mb-1">
+              Job 3
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>

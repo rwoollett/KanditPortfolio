@@ -7,14 +7,15 @@ module ApplicationHelper
    else 
      button_to 'Logout', destroy_user_session_path,
             class: style,
-            method: :delete
+            method: :delete,
+            "data-turbo" => false
         end 
   end
 
-  def source_helper(layout_name)
+  def source_helper(styles)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]} and you on the #{layout_name} layout"
-      content_tag(:p, greeting, class:"source-greeting")
+      greeting = "Thanks for visiting me from #{session[:source]}, please feel free to #{ link_to 'contact me', contact_me_path} if you'd like to work together."
+      content_tag(:div, greeting.html_safe, class: styles)
     end
   end
 
@@ -26,7 +27,7 @@ module ApplicationHelper
     [
       { url: root_path,  title: 'Home' },
       { url: about_path,  title: 'About Me' },
-      { url: contact_path,  title: 'Contact' },
+      { url: contact_me_path,  title: 'Contact' },
       { url: blogs_path,  title: 'Blog' },
       { url: portfolios_path,  title: 'Portfolio' }
     ]
@@ -53,6 +54,15 @@ module ApplicationHelper
 
   def alert_generator msg
     js add_gritter(msg, title: "Rodney Woollett Portfolio", sticky: false, time: 1000)
+  end
+
+  def include_jquery 
+    #A JQuery CDN "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    javascript_include_tag "/assets/jquery3.min.js"
+  end
+
+  def image_generator height:, width:
+    "http://placehold.it/#{height}x#{width}"
   end
 
 end

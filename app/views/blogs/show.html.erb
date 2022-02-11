@@ -2,12 +2,20 @@
 
   <h2><%= @blog.title %></h2>
 
-  <%= link_to "Edit", edit_blog_path(@blog) if logged_in?(:site_admin) %>
-
+  <nav class="breadcrumb-container d-flex px-2 py-1 mb-1 justify-content-between" aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><%= link_to "Home", root_path, class: "breadcrumb-item" %></li>
+      <li class="breadcrumb-item"><%= link_to @blog.topic.title, topic_path(@blog.topic), class: "breadcrumb-item" %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @blog.title %></li>
+    </ol>
+    <ol class="breadcrumb mb-0">
+      <li><%= link_to fa_icon('pencil-square-o'), edit_blog_path(@blog), class: "px-1" if logged_in?(:site_admin) %></li>
+      <li><%= link_to fa_icon('trash'), @blog, method: :delete, :"data-confirm" => "Are you sure?" if logged_in?(:site_admin)%></li>
+    </ol>
+  </nav>
   <p>
-    <%= @blog.body %>
+    <%= markdown @blog.body %>
   </p>
- 
   <%= render 'comments/comment_form' %>
   
   <div id="comments" data-blog-id="<%= @blog.id %>">

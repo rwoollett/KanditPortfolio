@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :topics, only: [:show]
+  
   devise_scope :user do
     # Redirects delete account users back homepage
     get "users", to: "pages#home"
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
 
   get 'about', to: 'pages#about'
-  get 'contact', to: 'pages#contact'
+  get 'contact-me', to: 'pages#contact'
 
   resources :blogs do
     member do

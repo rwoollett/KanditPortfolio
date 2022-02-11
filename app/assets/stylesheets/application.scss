@@ -30,6 +30,16 @@
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  font-family: 'Lato', sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Roboto Slab', serif;
 }
 
 /*
@@ -72,8 +82,8 @@ body {
  */
  ul.no-bullets {
   list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
+  padding-left: 0px;
+  margin-bottom: 1rem; 
 }
 
 .card-body {
@@ -128,3 +138,48 @@ body {
   }
 }
 
+.app-card-container {
+  color: black;
+  text-align: left;
+
+  > .card {
+    padding: 40px;
+  }
+
+  .fixed-col {
+    width: 220px;
+  }
+
+  .fixed-map {
+    width: 300px;
+  }
+
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+}
+
+.profile-image {
+  border: 1px solid grey;
+  width: 200px;
+}
+
+.profile-map {
+  width: 280px;
+  height: 280px;
+  border: 0px; 
+}
+
+$transition-collapse: height 0.35s ease;
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+}

@@ -1,5 +1,6 @@
 <div class="album py-5 bg-light">
   <div class="container">
+    <%= source_helper("alert alert-warning") %>
     <div data-controller="sorter" 
          class="<%= "sortable" if logged_in?(:site_admin) %> row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <%= render partial: 'portfolio_item', collection: @portfolio_items %>      

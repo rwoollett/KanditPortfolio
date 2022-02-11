@@ -1,13 +1,20 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "jquery";
+import { Turbo } from "@hotwired/turbo-rails";
+import "controllers";
+import "channels";
+
 import "bootstrap";
 import Rails from '@rails/ujs';
 import "jquery-ui";
-import "./html_sortable";
 import "cocoon";
-import "@hotwired/turbo-rails";
-import "controllers";
-import "./gritterlocal";
-import "channels"
+import "html_sortable";
+import "gritterlocal";
 
+Turbo.session.drive = true;
 Rails.start();
+
+
+
+
+
+
+
