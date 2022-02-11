@@ -1,3 +1,4 @@
+<% if @feature %>
 <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
   <div class="col-md-6 px-0">
     <h1 class="display-4 fst-italic feature-title"><%= @feature.title %></h1>
@@ -8,6 +9,7 @@
     </p>
   </div>
 </div>
+<% end %>
 <div class="row mb-2">
   <%= render "shared/featured" %>
 </div>
