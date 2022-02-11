@@ -2,7 +2,7 @@ module NavTopic
   extend ActiveSupport::Concern
 
   included do 
-    before_action :set_nav_topics, except: %i[ create update destroy toggle_status ]
+    before_action :set_nav_topics, except: %i[ destroy toggle_status ]
   end
   
   def set_nav_topics
