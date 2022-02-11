@@ -57,8 +57,6 @@ module ApplicationHelper
   end
 
   def include_jquery 
-    #A JQuery CDN "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-    #javascript_include_tag "/assets/jquery3.min.js"
     javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
   end
 
