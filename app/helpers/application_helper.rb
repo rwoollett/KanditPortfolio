@@ -57,7 +57,8 @@ module ApplicationHelper
   end
 
   def include_jquery 
-    javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    #javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    javascript_include_tag "jquery3.js"
   end
 
   def image_generator height:, width:
